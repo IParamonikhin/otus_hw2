@@ -6,13 +6,33 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2CC84E612D6A08C500E81DA4 /* gen_kpapi.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2CC84E602D6A08C500E81DA4 /* gen_kpapi.sh */; };
+		2CC84E652D6A121B00E81DA4 /* KinopoiskAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC84E642D6A121B00E81DA4 /* KinopoiskAPI */; };
+		2CC84EBD2D6A4BDB00E81DA4 /* SUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC84EBC2D6A4BDB00E81DA4 /* SUINavigation */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		2CC84E492D6A065900E81DA4 /* otus_hw2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = otus_hw2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CC84E602D6A08C500E81DA4 /* gen_kpapi.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = gen_kpapi.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2CC84E632D6A121100E81DA4 /* Exceptions for "otus_hw2" folder in "otus_hw2" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				KinopoiskAPI,
+			);
+			target = 2CC84E482D6A065900E81DA4 /* otus_hw2 */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2CC84E4B2D6A065900E81DA4 /* otus_hw2 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2CC84E632D6A121100E81DA4 /* Exceptions for "otus_hw2" folder in "otus_hw2" target */,
+			);
 			path = otus_hw2;
 			sourceTree = "<group>";
 		};
@@ -23,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC84EBD2D6A4BDB00E81DA4 /* SUINavigation in Frameworks */,
+				2CC84E652D6A121B00E81DA4 /* KinopoiskAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,7 +54,9 @@
 		2CC84E402D6A065900E81DA4 = {
 			isa = PBXGroup;
 			children = (
+				2CC84E602D6A08C500E81DA4 /* gen_kpapi.sh */,
 				2CC84E4B2D6A065900E81DA4 /* otus_hw2 */,
+				2CC84E5C2D6A084B00E81DA4 /* Frameworks */,
 				2CC84E4A2D6A065900E81DA4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +67,13 @@
 				2CC84E492D6A065900E81DA4 /* otus_hw2.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2CC84E5C2D6A084B00E81DA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,6 +96,8 @@
 			);
 			name = otus_hw2;
 			packageProductDependencies = (
+				2CC84E642D6A121B00E81DA4 /* KinopoiskAPI */,
+				2CC84EBC2D6A4BDB00E81DA4 /* SUINavigation */,
 			);
 			productName = otus_hw2;
 			productReference = 2CC84E492D6A065900E81DA4 /* otus_hw2.app */;
@@ -94,6 +127,9 @@
 			);
 			mainGroup = 2CC84E402D6A065900E81DA4;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2CC84EBB2D6A4BDB00E81DA4 /* XCRemoteSwiftPackageReference "SUINavigation" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2CC84E4A2D6A065900E81DA4 /* Products */;
 			projectDirPath = "";
@@ -109,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC84E612D6A08C500E81DA4 /* gen_kpapi.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +297,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -289,6 +327,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,6 +363,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2CC84EBB2D6A4BDB00E81DA4 /* XCRemoteSwiftPackageReference "SUINavigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ozontech/SUINavigation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2CC84E642D6A121B00E81DA4 /* KinopoiskAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KinopoiskAPI;
+		};
+		2CC84EBC2D6A4BDB00E81DA4 /* SUINavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CC84EBB2D6A4BDB00E81DA4 /* XCRemoteSwiftPackageReference "SUINavigation" */;
+			productName = SUINavigation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2CC84E412D6A065900E81DA4 /* Project object */;
 }
