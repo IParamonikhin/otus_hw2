@@ -14,17 +14,19 @@ final class FilmCardViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
 
+    private let filmsService: FilmsServiceProtocol
+
+    init(filmsService: FilmsServiceProtocol = ServiceLocator.shared.resolve()!) {
+        self.filmsService = filmsService
+    }
+
     func fetchFilmDetails(filmId: Int) {
         Task { @MainActor in
             isLoading = true
             errorMessage = nil
             
             do {
-                let result = try await FilmsAPI.apiV22FilmsIdGet(
-                    id: filmId,
-                    apiConfiguration: OpenAPIClientAPIConfiguration(customHeaders: ["X-API-KEY": "134aebc6-5099-4a05-9579-b3f47f482aaa"])
-                )
-                self.filmDetails = result
+                self.filmDetails = try await filmsService.fetchFilmDetails(id: filmId)
             } catch {
                 self.errorMessage = "Ошибка загрузки: \(error.localizedDescription)"
             }

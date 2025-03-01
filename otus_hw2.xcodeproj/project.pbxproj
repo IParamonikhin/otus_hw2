@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C6C0ED82D73487600088BA8 /* CoreServices in Frameworks */ = {isa = PBXBuildFile; productRef = 2C6C0ED72D73487600088BA8 /* CoreServices */; };
 		2CC84E612D6A08C500E81DA4 /* gen_kpapi.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2CC84E602D6A08C500E81DA4 /* gen_kpapi.sh */; };
 		2CC84E652D6A121B00E81DA4 /* KinopoiskAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC84E642D6A121B00E81DA4 /* KinopoiskAPI */; };
 		2CC84EBD2D6A4BDB00E81DA4 /* SUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC84EBC2D6A4BDB00E81DA4 /* SUINavigation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C6C0ED62D73486900088BA8 /* CoreServices */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreServices; sourceTree = "<group>"; };
 		2CC84E492D6A065900E81DA4 /* otus_hw2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = otus_hw2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC84E602D6A08C500E81DA4 /* gen_kpapi.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = gen_kpapi.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CC84EBD2D6A4BDB00E81DA4 /* SUINavigation in Frameworks */,
+				2C6C0ED82D73487600088BA8 /* CoreServices in Frameworks */,
 				2CC84E652D6A121B00E81DA4 /* KinopoiskAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +75,7 @@
 		2CC84E5C2D6A084B00E81DA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C6C0ED62D73486900088BA8 /* CoreServices */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -98,6 +102,7 @@
 			packageProductDependencies = (
 				2CC84E642D6A121B00E81DA4 /* KinopoiskAPI */,
 				2CC84EBC2D6A4BDB00E81DA4 /* SUINavigation */,
+				2C6C0ED72D73487600088BA8 /* CoreServices */,
 			);
 			productName = otus_hw2;
 			productReference = 2CC84E492D6A065900E81DA4 /* otus_hw2.app */;
@@ -129,6 +134,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				2CC84EBB2D6A4BDB00E81DA4 /* XCRemoteSwiftPackageReference "SUINavigation" */,
+				2C6C0ED52D7347E500088BA8 /* XCLocalSwiftPackageReference "CoreServices" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2CC84E4A2D6A065900E81DA4 /* Products */;
@@ -364,6 +370,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		2C6C0ED52D7347E500088BA8 /* XCLocalSwiftPackageReference "CoreServices" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = CoreServices;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		2CC84EBB2D6A4BDB00E81DA4 /* XCRemoteSwiftPackageReference "SUINavigation" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -376,6 +389,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2C6C0ED72D73487600088BA8 /* CoreServices */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreServices;
+		};
 		2CC84E642D6A121B00E81DA4 /* KinopoiskAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = KinopoiskAPI;

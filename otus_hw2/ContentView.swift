@@ -6,9 +6,8 @@
 //
 
 import SwiftUI
-import Foundation
-import KinopoiskAPI
 import SUINavigation
+import KinopoiskAPI
 
 struct ContentView: View {
     
@@ -28,26 +27,30 @@ struct ContentView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
+                .onChange(of: selectedCategory) { newCategory in
+                    viewModel.fetch(category: newCategory, page: 1) 
+                }
                 
-                List(viewModel.films) { film in
-                    FilmCell(film: film, isFlying: flyingFilmId == film.kinopoiskId) {
-                        flyingFilmId = film.kinopoiskId
-                        isAnimating = true
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                            filmId = film.kinopoiskId
-                            flyingFilmId = nil
+                List {
+                    ForEach(viewModel.films, id: \.kinopoiskId) { film in
+                        FilmCell(film: film, isFlying: flyingFilmId == film.kinopoiskId) {
+                            withAnimation(.easeInOut(duration: 0.6)) {
+                                flyingFilmId = film.kinopoiskId
+                                isAnimating = true
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                                filmId = film.kinopoiskId
+                                flyingFilmId = nil
+                                isAnimating = false
+                            }
                         }
-                    }
-                    .onAppear {
-                        if viewModel.films.needToLoad(item: film) {
-                            viewModel.fetch(category: selectedCategory)
+                        .onAppear {
+                            if film == viewModel.films.last {
+                                viewModel.fetch(category: selectedCategory, page: viewModel.page)
+                            }
                         }
                     }
                 }
-            }
-
-            .onChange(of: selectedCategory) { _ in
-                viewModel.fetch(category: selectedCategory)
             }
             .navigationTitle(selectedCategory.displayName)
             .navigationAction(item: $filmId) { id in
@@ -57,7 +60,6 @@ struct ContentView: View {
                 viewModel.fetch(category: selectedCategory)
             }
         }
-        
     }
 }
 
