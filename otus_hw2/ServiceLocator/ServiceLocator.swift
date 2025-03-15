@@ -12,7 +12,7 @@ final class ServiceLocator {
 
     private var services: [String: Any] = [:]
 
-    func register<T>(_ service: T) {
+    func register<T>(service: T) {
         let key = String(describing: T.self)
         services[key] = service
     }

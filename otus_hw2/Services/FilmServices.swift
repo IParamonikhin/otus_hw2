@@ -15,23 +15,18 @@ protocol FilmsServiceProtocol {
 }
 
 final class FilmsService: FilmsServiceProtocol {
-    
     private let networkService: NetworkServiceProtocol
-    private let apiConfiguration = OpenAPIClientAPIConfiguration(customHeaders: ["X-API-KEY" : "134aebc6-5099-4a05-9579-b3f47f482aaa"] )
-
-    init(
-        networkService: NetworkServiceProtocol = ServiceLocator.shared.resolve()!
-    ) {
+    private let apiConfiguration = OpenAPIClientAPIConfiguration(customHeaders: ["X-API-KEY": "134aebc6-5099-4a05-9579-b3f47f482aaa"])
+    
+    init(networkService: NetworkServiceProtocol = ServiceLocator.shared.resolve()!) {
         self.networkService = networkService
     }
-
+    
     func fetchFilmsCollection(type: FilmsAPI.ModelType_apiV22FilmsCollectionsGet, page: Int = 1) async throws -> FilmCollectionResponse {
-        let result = try await FilmsAPI.apiV22FilmsCollectionsGet(page: page, type: type, apiConfiguration: apiConfiguration)
-        return result
+        return try await FilmsAPI.apiV22FilmsCollectionsGet(page: page, type: type, apiConfiguration: apiConfiguration)
     }
     
     func fetchFilmDetails(id: Int) async throws -> Film {
-        let result = try await FilmsAPI.apiV22FilmsIdGet(id: id, apiConfiguration: apiConfiguration)
-        return result
+        return try await FilmsAPI.apiV22FilmsIdGet(id: id, apiConfiguration: apiConfiguration)
     }
 }

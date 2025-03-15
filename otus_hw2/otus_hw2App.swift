@@ -7,22 +7,26 @@
 
 import SwiftUI
 import CoreServices
+import KinopoiskAPI
 
 @main
 struct otus_hw2App: App {
-    
-    init() {
-        setupDependencies()
-    }
+    @StateObject private var mediator = FilmMediator.shared
 
+    init() {
+        configureDependencies()
+    }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FilmListView()
+                .environmentObject(mediator)
         }
     }
-    
-    private func setupDependencies() {
-        ServiceLocator.shared.register(NetworkService() as NetworkServiceProtocol)
-        ServiceLocator.shared.register(FilmsService() as FilmsServiceProtocol)
-    }
+}
+
+private func configureDependencies() {
+    ServiceLocator.shared.register(service: NetworkService() as NetworkServiceProtocol)
+    ServiceLocator.shared.register(service: FilmsService() as FilmsServiceProtocol)
+    ServiceLocator.shared.register(service: FilmStore() as FilmStore)
+    ServiceLocator.shared.register(service: FilmMediator() as FilmMediator)
 }
